@@ -11,6 +11,7 @@
         </div>
         <div class="card-body">
             <h2 class="card-title"><a class="text-dark" href="{{ .Permalink }}">{{ .Title }}</a></h2>
+            <p class="card-text">{{ .Description | plainify }}</p>
             <h4 class="card-text">{{ .Summary }}</h4>            
         </div>
         <div class="card-footer bg-white">
