@@ -9,14 +9,15 @@ License: https://www.wowthemes.net/freebies-license/
 
 a {
     /*color: #00ab6b;*/
-    color: #007bff;
-    transition: all 0.2s;
+    /*color: #1a0dab;*/
+    /*transition: all 0.1s;
+    text-decoration: none;*/
 }
 
 a:hover {
     /*color: #038252;*/
-    color: #6f42c1;
-    text-decoration: none;
+    /*text-decoration: none;
+    text-decoration: underline;*/
 }
 
 pre {
