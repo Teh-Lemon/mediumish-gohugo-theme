@@ -5,13 +5,17 @@
   <span class="navigation" role="navigation">
     {{ if gt .TotalPages 1 }}
       <div class="pagination">
-        {{ if .HasPrev }}
+                
+        {{ if and (ne .PageNumber 1) (ne .PageNumber 2)}}
+        <a class="ml-1 mr-1" href="{{.First.URL}}">First</a>
+        {{ end }}
+        {{ if .HasPrev }}          
           <a class="ml-1 mr-1" href="{{.Prev.URL}}">&laquo; Prev</a>
           <a class="ml-1 mr-1" href="{{.Prev.URL}}">{{ .Prev.PageNumber }}</a>
         {{ else }}
           <span>&laquo; Prev</span>
         {{ end }}
-
+        
         <span class="ml-1 mr-1">{{ .PageNumber }}</span>
 
         {{ if .HasNext }}
@@ -20,7 +24,12 @@
         {{ else }}
           <span>Next &raquo;</span>
         {{ end }}
-      </div>
+
+        {{ if and (ne .PageNumber .TotalPages) (ne .PageNumber (sub .TotalPages 1))}}
+        <a class="ml-1 mr-1" href="{{.Last.URL}}">Last</a>
+        {{ end }}
+
+      </div>      
     {{ end }}
   </span>
 </div>
